@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --background: #f1f1f1;
+    --white: #ffffff;
+    --text-dark: #303030;
+    --text-light: #e3e3e3;
+    --text-mid: #616161;
+    --grey-300: #1a1a1a;
+    --grey-200: #303030;
+    --grey-100: #616161;
+    --grey-50: #656266;
+    --stroke-200: #616161;
+    --stroke-100: #e1e1e1;
+    --stroke-50: #dbdbdb;
+    --state-hover: #f1f1f1;
+    --state-pressed: #f0f0f0;
+    --state-focused: #005BD3;
+}
+
+body {
+    background: var(--background);
+}
+
+header {
+    display: flex;
+    padding: 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--grey-300);
+}
+
+.shopify_logo {
+    background-image: url(https://crushingit.tech/hackathon-assets/shopify-icon-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 105px;
+    height: 30px;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    width: 480px;
+    height: 32px;
+    column-gap: 6px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid var(--stroke-200);
+    background: var(--grey-200);
+}
+
+.searchbar:hover {
+    border: 1px solid var(--stroke-100);
+}
+
+.searchbar:active, .searchbar:focus {
+    border: 2px solid var(--White, #FFF);
+}
+
+.searchbar input {
+    width: 300px;
+    background: none;
+    border: none;
+}
+
+.searchbar input:focus {
+    border: none;
+}
+
+.search_icon {
+    background-image: url(https://crushingit.tech/hackathon-assets/icon-search.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+
+.aside_right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notification {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--grey-200, #303030);
+}
+
+.notification_icon {
+    background-image: url(https://crushingit.tech/hackathon-assets/icon-bell.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    color: wheat;
+}
+
+.account_name {
+    display: flex;
+    padding: 2px 2px 2px 8px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--grey-200);
+}
+
+.fullname {
+    color: var(--text-light);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 15.6px */
+}
+
+.dc {
+    display: flex;
+    height: 28px;
+    padding: 10px 5px 10px 5px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background: #36FBA1;
+}
+
+.dc p {
+    color: rgba(0, 0, 0, 0.40);
+    text-align: center;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 15.6px */
+}
