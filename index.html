@@ -13,37 +13,229 @@
 <body>
     <header>
         <div>
-            <div class="shopify_logo"></div>
-            <div class="shopify_logo_mobile"></div>
+            <a href="">
+                <div class="shopify_logo"></div>
+                <div class="shopify_logo_mobile"></div>
+            </a>
         </div>
 
         <div class="searchbar">
-            <div class="search_icon"></div>
-            <input type="text" placeholder="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 14" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.82264 10.3833C7.89957 11.0841 6.74835 11.5 5.5 11.5C2.46243 11.5 0 9.03757 0 6C0 2.96243 2.46243 0.5 5.5 0.5C8.53757 0.5 11 2.96243 11 6C11 7.24835 10.5841 8.39957 9.8833 9.32264L12.7803 12.2197C13.0732 12.5126 13.0732 12.9874 12.7803 13.2803C12.4874 13.5732 12.0126 13.5732 11.7197 13.2803L8.82264 10.3833ZM9.5 6C9.5 8.20914 7.70914 10 5.5 10C3.29086 10 1.5 8.20914 1.5 6C1.5 3.79086 3.29086 2 5.5 2C7.70914 2 9.5 3.79086 9.5 6Z" fill="#fff"/>
+            </svg>
+
+            <input type="text" placeholder="Search" class="search">
         </div>
 
-        <div class="aside_right">
-            <div class="notification">
-                <div class="notification_icon"></div>
-            </div>
+        <nav class="aside_right">
+            <ul>
+                <li id="menu-list">
+                    <button id="notification-menu" class="notification nav_btn" aria-haspopup="true" aria-expanded="false" aria-controls="notification-menu-content" onclick="toggleMenu()">
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.75203 14.4239L5.3061 14.1427C3.45144 13.9295 2.92542 11.4844 4.52838 10.5274L4.5933 10.4886C5.466 9.96761 6.00045 9.02609 6.00045 8.00969V7.5C6.00045 5.01472 8.01517 3 10.5005 3C12.9857 3 15.0005 5.01472 15.0005 7.5V8.00969C15.0005 9.02609 15.5349 9.96761 16.4076 10.4886L16.4725 10.5274C18.0755 11.4844 17.5495 13.9295 15.6948 14.1427L13.152 14.435V14.8C13.152 16.2912 11.9432 17.5 10.452 17.5C8.96086 17.5 7.75203 16.2912 7.75203 14.8V14.4239ZM11.652 14.5H9.25203V14.8C9.25203 15.4627 9.78929 16 10.452 16C11.1148 16 11.652 15.4627 11.652 14.8V14.5ZM8.50045 13H12.5005L15.5235 12.6525C15.953 12.6032 16.0748 12.0369 15.7036 11.8153L15.6387 11.7766C15.5591 11.7291 15.4815 11.6793 15.4057 11.6273C15.2506 11.521 15.1036 11.4055 14.9651 11.2818C14.9405 11.2598 14.9162 11.2377 14.8922 11.2152C14.0144 10.395 13.5005 9.23833 13.5005 8.00969V7.5C13.5005 5.84315 12.1573 4.5 10.5005 4.5C8.8436 4.5 7.50045 5.84315 7.50045 7.5V8.00969C7.50045 9.23833 6.98651 10.395 6.10871 11.2152C6.08469 11.2377 6.06039 11.2598 6.03583 11.2818C5.89734 11.4055 5.75029 11.521 5.59523 11.6273C5.51945 11.6793 5.44176 11.7291 5.36222 11.7766L5.29729 11.8153C4.9261 12.0369 5.0479 12.6032 5.47739 12.6525L8.50045 13Z" fill="#fff"/>
+                        </svg>
+                    </button>
 
-            <div class="account_name">
-                <p class="fullname">Davii Collections</p>
+                    <aside id="notification-menu-content" class="notification-action" role="menu" aria-labelledby="notification-menu">
+                        <div class="notification_header">
+                            <h3>Alerts</h3>
 
-                <div class="dc">
-                    <p>DC</p>
-                </div>
-            </div>
-        </div>
+                            <span>
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M3 6C3 5.58579 3.33579 5.25 3.75 5.25H16.25C16.6642 5.25 17 5.58579 17 6C17 6.41421 16.6642 6.75 16.25 6.75H3.75C3.33579 6.75 3 6.41421 3 6Z" fill="#616161"/>
+                                        <path d="M6.75 14C6.75 13.5858 7.08579 13.25 7.5 13.25H12.5C12.9142 13.25 13.25 13.5858 13.25 14C13.25 14.4142 12.9142 14.75 12.5 14.75H7.5C7.08579 14.75 6.75 14.4142 6.75 14Z" fill="#616161"/>
+                                        <path d="M5.5 9.25C5.08579 9.25 4.75 9.58579 4.75 10C4.75 10.4142 5.08579 10.75 5.5 10.75H14.5C14.9142 10.75 15.25 10.4142 15.25 10C15.25 9.58579 14.9142 9.25 14.5 9.25H5.5Z" fill="#616161"/>
+                                    </svg>
+                                </button>
+
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M13.2803 9.03033C13.5732 8.73744 13.5732 8.26256 13.2803 7.96967C12.9874 7.67678 12.5126 7.67678 12.2197 7.96967L9.25 10.9393L8.03033 9.71967C7.73744 9.42678 7.26256 9.42678 6.96967 9.71967C6.67678 10.0126 6.67678 10.4874 6.96967 10.7803L8.71967 12.5303C9.01256 12.8232 9.48744 12.8232 9.78033 12.5303L13.2803 9.03033Z" fill="#616161"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10ZM15.5 10C15.5 13.0376 13.0376 15.5 10 15.5C6.96243 15.5 4.5 13.0376 4.5 10C4.5 6.96243 6.96243 4.5 10 4.5C13.0376 4.5 15.5 6.96243 15.5 10Z" fill="#616161"/>
+                                    </svg>
+                                </button>
+                            </span>
+                        </div>
+                        
+                        <div class="notif_list">
+                            <div class="notification-items">
+                                <p>Alerts about your store and account will show here</p>
+                            </div>
+                        </div>
+                    </aside>
+                </li>
+
+                <li>
+                    <button id="profile-menu" class="account_name nav_btn" aria-haspopup="true" aria-expanded="false" aria-controls="profile-menu-content">
+                        <p class="fullname">Davii Collections</p>
+    
+                        <p class="dc">DC</p>
+                    </button>
+
+                    <aside id="profile-menu-content" class="profile" role="menu" aria-labelledby="profile-menu">
+                        <div>
+                            <button class="item1 profile_list" role="menuitem">
+                                <span>
+                                    <div class="dc">
+                                        <p>DC</p>
+                                    </div>
+        
+                                    <p class="profile_name">Davii Collections</p>
+                                </span>
+        
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M13.3332 4L5.99984 11.3333L2.6665 8" stroke="#303030" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+        
+                            <button class="item2 profile_list" role="menuitem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.257 3H6.74302C6.35944 3 5.9971 3.17611 5.76012 3.47772L3.37394 6.51468C3.13169 6.823 3 7.20375 3 7.59586V8.25C3 9.31867 3.60958 10.245 4.5 10.7001V15.25C4.5 16.2165 5.2835 17 6.25 17H13.75C14.7165 17 15.5 16.2165 15.5 15.25V10.7001C16.3904 10.245 17 9.31867 17 8.25V7.76879C17 7.26465 16.8307 6.77511 16.5192 6.3787L14.2399 3.47772C14.0029 3.17611 13.6406 3 13.257 3ZM13 15.5H13.75C13.8881 15.5 14 15.3881 14 15.25V11C13.212 11 12.5014 10.6686 12 10.1375C11.4986 10.6686 10.788 11 10 11C9.21199 11 8.50138 10.6686 8 10.1375C7.49862 10.6686 6.78801 11 6 11V15.25C6 15.3881 6.11193 15.5 6.25 15.5H10V13C10 12.4477 10.4477 12 11 12H12C12.5523 12 13 12.4477 13 13V15.5ZM6 9.5H5.75C5.05964 9.5 4.5 8.94036 4.5 8.25V7.59586C4.5 7.53985 4.51881 7.48545 4.55342 7.44141L6.86453 4.5H13.1355L15.3397 7.30543C15.4436 7.43757 15.5 7.60075 15.5 7.76879V8.25C15.5 8.94036 14.9404 9.5 14.25 9.5H14C13.3096 9.5 12.75 8.94036 12.75 8.25V7.75C12.75 7.33579 12.4142 7 12 7C11.5858 7 11.25 7.33579 11.25 7.75V8.25C11.25 8.94036 10.6904 9.5 10 9.5C9.30964 9.5 8.75 8.94036 8.75 8.25V7.75C8.75 7.33579 8.41421 7 8 7C7.58579 7 7.25 7.33579 7.25 7.75V8.25C7.25 8.94036 6.69036 9.5 6 9.5Z" fill="#303030"/>
+                                </svg>
+                                
+                                <p>All stores</p>
+                            </button>
+                        </div>
+        
+                        <hr>
+        
+                        <div>
+                            <button class="dropdown profile_list" role="menuitem">Help center</button>
+        
+                            <button class="dropdown profile_list" role="menuitem">Changelog</button>
+        
+                            <button class="dropdown profile_list" role="menuitem">Community forums</button>
+        
+                            <button class="dropdown profile_list" role="menuitem">Hire a shopify partner</button>
+        
+                            <button class="dropdown profile_list" role="menuitem">Keyboard shortcuts</button>
+                        </div>
+        
+                        <hr>
+        
+                        <div>
+                            <button class="dropdown user profile_list" role="menuitem">
+                                <p class="user_name">David Micheal</p>
+                                <p class="user_email">davidmicheal@gmail.com</p>
+                            </button>
+        
+                            <button class="dropdown profile_list" role="menuitem">Manage account</button>
+        
+                            <button class="dropdown profile_list" role="menuitem">Logout</button>
+                        </div>
+                    </aside>
+                </li>
+            </ul>            
+        </nav>
     </header>
 
     <main>
-        <section></section>
+        <section class="plan">
+            <span>
+                <p>Extend your trial for $1/month for 3 months on select plans.</p>
 
-        <section></section>
+                <button class="plan_btn">Select a plan</button>
+            </span>
+
+            <button class="close_plan">
+                <svg width="20" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14.4697 15.0303C14.7626 15.3232 15.2374 15.3232 15.5303 15.0303C15.8232 14.7374 15.8232 14.2626 15.5303 13.9697L11.5607 10L15.5303 6.03033C15.8232 5.73744 15.8232 5.26256 15.5303 4.96967C15.2374 4.67678 14.7626 4.67678 14.4697 4.96967L10.5 8.93934L6.53033 4.96967C6.23744 4.67678 5.76256 4.67678 5.46967 4.96967C5.17678 5.26256 5.17678 5.73744 5.46967 6.03033L9.43934 10L5.46967 13.9697C5.17678 14.2626 5.17678 14.7374 5.46967 15.0303C5.76256 15.3232 6.23744 15.3232 6.53033 15.0303L10.5 11.0607L14.4697 15.0303Z" fill="#fff"/>
+                </svg>
+            </button>
+        </section>
+
+        <section class="setup">
+            <div class="setup-body">
+                <article>
+                    <span>
+                        <p class="setup_h">Setup guide </p>
+
+                        <p class="setup_p">Use this personalized guide to get your store up and running.</p>
+                    </span>
+                    
+                    <div></div>
+                </article>
+
+                <span>
+                    <button class="chevron">
+                        <svg width="20" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.21967 8.46967C6.51256 8.17678 6.98744 8.17678 7.28033 8.46967L10.75 11.9393L14.2197 8.46967C14.5126 8.17678 14.9874 8.17678 15.2803 8.46967C15.5732 8.76256 15.5732 9.23744 15.2803 9.53033L11.2803 13.5303C10.9874 13.8232 10.5126 13.8232 10.2197 13.5303L6.21967 9.53033C5.92678 9.23744 5.92678 8.76256 6.21967 8.46967Z" fill="#4a4a4a"/>
+                        </svg>                        
+                    </button>
+
+                    <button class="chevron">
+                        <svg width="20" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0303 12.2803C14.7374 12.5732 14.2626 12.5732 13.9697 12.2803L10.5 8.81066L7.03033 12.2803C6.73744 12.5732 6.26256 12.5732 5.96967 12.2803C5.67678 11.9874 5.67678 11.5126 5.96967 11.2197L9.96967 7.21967C10.2626 6.92678 10.7374 6.92678 11.0303 7.21967L15.0303 11.2197C15.3232 11.5126 15.3232 11.9874 15.0303 12.2803Z" fill="#4a4a4a"/>
+                        </svg>
+                    </button>
+                </span>
+            </div>
+
+            <div class="setup-actions">
+                <div class="setup-details">
+                    <div class="setup-check">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="#bababa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
+                        </svg>
+                    </div>
+
+                    <div class="setup-detail-info">
+                        <div>
+                            <h5>Customize your online store</h5>
+
+                            <p>Choose a theme and add your logo, colors, and images to reflect your brand. <span><a href="#">Learn more</a></span> </p>
+
+                            <button>Customize theme</button>
+                        </div>
+
+                        <div class="setup-illustrations"> </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="setup-list">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="#bababa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
+                        </svg>
+
+                        <h5>Add your first product</h5>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="setup-list">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="#bababa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
+                        </svg>
+
+                        <h5>Add a custom domain</h5>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="setup-list">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="#bababa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
+                        </svg>
+
+                        <h5>Name your store</h5>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="setup-list">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="#bababa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4 6" />
+                        </svg>
+
+                        <h5>Set up a payment provider</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="./app.js"></script>
 </body>
 </html>
-

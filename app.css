@@ -25,12 +25,19 @@ body {
     background: var(--background);
 }
 
+button, a {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 header {
     display: flex;
     padding: 12px 16px;
     justify-content: space-between;
     align-items: center;
     background: var(--grey-300);
+    position: relative;
 }
 
 .shopify_logo {
@@ -66,22 +73,22 @@ header {
     width: 300px;
     background: none;
     border: none;
+    color: var(--grey-100, #B5B5B5);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */
 }
 
 .searchbar input:focus {
-    border: none;
+    color: white;
 }
 
-.search_icon {
-    background-image: url(https://crushingit.tech/hackathon-assets/icon-search.svg);
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-}
-
-.aside_right {
+.aside_right ul {
     display: flex;
     align-items: center;
+    list-style-type: none;
     gap: 8px;
 }
 
@@ -97,14 +104,6 @@ header {
     background: var(--grey-200, #303030);
 }
 
-.notification_icon {
-    background-image: url(https://crushingit.tech/hackathon-assets/icon-bell.svg);
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    color: wheat;
-}
-
 .account_name {
     display: flex;
     padding: 2px 2px 2px 8px;
@@ -112,6 +111,19 @@ header {
     gap: 8px;
     border-radius: 8px;
     background: var(--grey-200);
+}
+
+.nav_btn:hover  {
+    background: var(--text-mid, #616161);
+}
+
+.nav_btn:active {
+    background: var(--grey-50, #656266);
+}
+
+.nav_btn:focus {
+    background: var(--grey-50, #656266);
+    box-shadow: 0px 0px 0px 3px #005BD3, 0px 0px 0px 1px #000;
 }
 
 .fullname {
@@ -131,9 +143,8 @@ header {
     align-items: center;
     border-radius: 6px;
     background: #36FBA1;
-}
 
-.dc p {
+    /* text styles */
     color: rgba(0, 0, 0, 0.40);
     text-align: center;
     font-family: Inter;
@@ -141,4 +152,451 @@ header {
     font-style: normal;
     font-weight: 500;
     line-height: 130%; /* 15.6px */
+}
+
+/* navbar profile and naotification extension styling */
+
+.notification-action {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 14px;
+    border: 1px solid var(--stroke-50, #DBDBDB);
+    background: var(--white, #FFF);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    width: 383px;
+    display: none;
+}
+
+.notification_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    /* texts styles */
+    color: var(--text-dark, #303030);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 19.6px */
+}
+
+.notification_header span {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.notification-items {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    gap: 8px;
+    background: var(--state-hover, #F1F1F1);
+    width: 100%;
+
+    color: var(--font-mid-2, #616161);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 18.2px */
+}
+
+.profile {
+    display: flex;
+    width: 320px;
+    padding: 6px 0px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    border-radius: 14px;
+    border: 1px solid var(--stroke-50, #DBDBDB);
+    background: var(--White, #FFF);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 64px;
+    right: 16px;
+    display: none;
+}
+
+hr {
+    width: 320px;
+    border: 0.75px solid #e1e1e1;
+}
+
+.item1 {
+    display: flex;
+    padding: 4px 12px 4px 8px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 8px;
+    background: var(--state-hover, #F1F1F1);
+    width: 308px;
+}
+
+.item1 span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile_name {
+    color: var(--font-dark, #303030);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 18.2px */
+}
+
+.item2 {
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    border-radius: 8px;
+    width: 100%;
+    background: transparent;
+}
+
+.item2 p {
+    color: var(--text-dark, #303030);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 18.2px */
+}
+
+.dropdown {
+    width: 308px;
+    height: 30px;
+    display: flex;
+    padding: 6px;
+    margin: 4px 0;
+    gap: 8px;
+    border-radius: 8px;
+    background: transparent;
+
+    /* text styles  */
+    color: var(--text-dark, #303030);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 18.2px */
+}
+
+.user {
+    flex-direction: column;
+    gap: 0;
+    margin-top: 0;
+    height: 50px;
+    cursor: pointer;
+}
+
+.user_name {
+    color: var(--text-dark, #303030);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */
+}
+
+.user_email {
+    color: var(--text-mid, #616161);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 15.6px */
+}
+
+.profile_list:hover {
+    background: var(--state-hover);
+}
+
+.profile_list:focus {
+    border: 2px solid var(--state-focused);
+}
+
+/* main body styling */
+
+
+.plan {
+    display: flex;
+    width: 800px;
+    padding: 12px 8px 12px 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 32px;
+    border-radius: 8px;
+    background: var(--grey-300, #1A1A1A);
+}
+
+.plan span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 736px;
+}
+
+.plan p {
+    color: var(--text-light, #E3E3E3);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */ 
+}
+
+.plan_btn {
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--White, #FFF);
+    box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+
+    /* text styling */
+    color: var(--font-dark, #323232);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 15.6px */
+}
+
+.plan_btn:hover {
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #F7F7F7;
+    box-shadow: 0px -1px 0px 0px #B5B5B5 inset;
+}
+
+.close_plan {
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    background: var(--grey-300);
+}
+
+.setup {
+    display: flex;
+    width: 800px;
+    padding: 8px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+    margin: 0 auto;
+    margin-top: 16px;
+    border-radius: 18px;
+    border: 1px solid var(--stroke-50, #DBDBDB);
+    background: var(--White, #FFF);
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+}
+
+.setup .setup-body {
+    display: flex;
+    padding: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+    background: transparent;
+}
+
+.setup_h {
+    color: var(--text-dark, #303030);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 19.6px */
+}
+
+.setup_p {
+    color: var(--font-dark, #303030);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 18.2px */
+}
+
+.chevron {
+    display: flex;
+    padding: 4px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 6px;
+    background: none;
+}
+
+
+.setup-actions {
+    width: 100%;
+}
+.setup-details {
+    display: flex;
+    padding: 8px 8px 12px 8px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 10px;
+    background: var(--background);
+}
+
+.setup-detail-info {
+    display: flex;
+    align-items: center;
+    gap: 96px;
+}
+
+.setup-detail-info div {
+    display: flex;
+    padding: 2px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.setup-detail-info div h5 {
+    color: var(--text-dark, #303030);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 18.2px */
+}
+
+.setup-detail-info div p {
+    color: var(--text-mid, #616161);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 18.2px */
+}
+
+.setup-detail-info div a {
+    color: var(--state-focused, #005BD3);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    text-decoration: none;
+}
+
+.setup-detail-info div button {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border-top: 1.5px solid var(--stroke-100);
+    border-right: 1.5px solid var(--stroke-100);
+    border-left: 1.5px solid var(--stroke-100);
+    background: #404040;
+    box-shadow: 0px 0px 0px 1.5px #333, 0px 1px 0px 1.5px #333, 0px 2px 0px 0px #000;
+
+    color: var(--text-light, #F6F3F6);
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 15.6px */
+}
+
+.setup-detail-info div button:hover {
+    background: #2A2A2A;
+}
+
+.setup-list {
+    display: flex;
+}
+.setup-illustrations {
+    width: 157px;
+    height: 120px;
+    background: url(https://crushingit.tech/hackathon-assets/customise-store.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+div h5 {
+    color: var(--text-dark, #303030);
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 18.2px */
+}
+
+
+
+
+/* media query for mobile screen size */
+@media (max-width: 767px) {
+    /* Styles for mobile devices */
+    /* This will apply styles for screens up to 767 pixels wide */
+
+    .shopify_logo {
+        display: none;
+    }
+
+    .shopify_logo_mobile {
+        width: 32px;
+        height: 32px;
+        background-image: url(https://crushingit.tech/hackathon-assets/shopify-icon.svg);
+        margin-right: 8px;
+    }
+
+    .searchbar {
+        width: 238px;
+    }
+
+    .notification {
+        background: none;
+    }
+
+    .account_name {
+        background: none;
+        padding: 2px;
+        
+    }
+    
+    .fullname {
+        display: none;
+    }
+
+    /* main body styling for mobile view */
+
+    .plan {
+        width: 100vw;
+        border-radius: 0;
+        align-items: flex-start;
+    }
+
+    .plan span {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .setup {
+        width: 100vw;
+        border-radius: 0;
+    }
 }
